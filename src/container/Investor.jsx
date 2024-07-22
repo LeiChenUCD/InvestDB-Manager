@@ -2,9 +2,11 @@ import { getInvestor } from "../util/util"
 import React from "react"
 import InvestorEntry from "../component/InvestorEntry"
 import { LeftBarWidth } from "../util/config"
+import { height } from "@fortawesome/free-brands-svg-icons/fa42Group"
 function Investor() {
     const [investors, setInvestors] = React.useState([])
-
+    const [editedRecordsCount, setEditedRecordsCount] = React.useState(0)
+    console.log(editedRecordsCount)
     React.useEffect(() => {
         async function getData() {
             const res = await getInvestor()
@@ -43,12 +45,12 @@ function Investor() {
         ])
     }
     
-    return <div style={{width: `calc(100vw - ${LeftBarWidth}px)`, overflowY: 'overlay', paddingTop: "50px"}}>
+    return <div style={{width: `calc(100vw - ${LeftBarWidth}px)`, overflowY: 'overlay', paddingTop: "50px", height: "100vh", paddingTop: "100px"}}>
         
         <div style={{display: "flex"}}>
             <div style={{minWidth: "150px", textAlign: "center"}}>
             </div>
-            <div style={{border: "1px solid lightGrey", display: "flex"}}>
+            <div style={{border: "1px solid lightGrey", display: "flex", background: "white"}}>
                 <div style={{width: "50px", textAlign: "center", borderRight: "1px solid lightGrey"}}>
                     ID
                 </div>
@@ -87,6 +89,8 @@ function Investor() {
         key={idx} 
         investor={investor} 
         deleteInvestorRecall={deleteInvestorRecall}
+        setEditedRecordsCount={setEditedRecordsCount}
+        editedRecordsCount={editedRecordsCount}
         />)}
 
         <button style={{marginLeft: "150px"}} onClick={() => addEntry()}>+</button>
