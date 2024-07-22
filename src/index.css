@@ -15,3 +15,9 @@ code {
 /* div[contenteditable="true"]::before {
   content: attr(placeholder); 
 } */
+
+button {
+  background: rgb(17 32 86);
+  color: white;
+  border-radius: 8px;
+}

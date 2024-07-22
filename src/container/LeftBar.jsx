@@ -17,8 +17,11 @@ function LeftBar() {
     background: "white",
     marginLeft: "100px",
     color: "rgb(27 20 100)",
-    borderRadius: "5px"
+    borderRadius: "8px",
+    marginRight: "30px"
     }}>
+        <div style={{textAlign: "center", fontWeight: "bold"}}>Tables</div>
+        <hr style={{width: "95px"}}></hr>
         <LeftBarTabs tabName={"Investor"}/>
         <LeftBarTabs tabName={"Investment"}/>
     </div>
